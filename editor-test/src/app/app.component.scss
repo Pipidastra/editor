@@ -1,0 +1,21 @@
+.app {
+  display: flex;
+  height: 100vh;
+
+  &__sidebar {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    background-color: #f4f4f4;
+    gap: 20px;
+    &-list {
+      overflow-y: auto;
+    }
+  }
+
+  &__content {
+    width: 70vw;
+    padding: 1rem;
+ }
+}

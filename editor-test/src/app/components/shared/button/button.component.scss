@@ -1,0 +1,26 @@
+@import 'styles';
+
+.button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: $black;
+  background-color: $super-light-gray;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+
+  &:active {
+    background-color: $gray;
+  }
+
+  &:disabled {
+    background-color: $danger-gray;
+    cursor: not-allowed;
+  }
+}

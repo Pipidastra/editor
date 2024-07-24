@@ -1,0 +1,42 @@
+@import "styles";
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid $super-light-gray;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background-color: $white;
+
+    &-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-title {
+      @extend .notes-list__item-text;
+      font-weight: $font-weight-bold;
+    }::first-letter {
+       text-transform: uppercase;
+     }
+
+    &-content {
+      color: $dark-gray;
+      @extend .notes-list__item-text;
+    }::first-letter {
+       text-transform: uppercase;
+     }
+    &:hover {
+      background-color: $super-light-gray;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "styles";
+
+.note-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $super-light-gray;
+  border-radius: $border-radius;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    &-item {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 20px;
+  }
+  &__title {
+    color: $black;
+    font-weight: $font-weight-bold;
+  }
+
+
+  &__text {
+    color: $dark-gray;
+    overflow-y: auto;
+    max-height: 80vh;
+  }::first-letter {
+     text-transform: uppercase;
+   }
+}

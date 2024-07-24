@@ -1,0 +1,13 @@
+.notes-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-item { }
+  }
+}

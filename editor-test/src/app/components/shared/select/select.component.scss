@@ -1,0 +1,27 @@
+@import 'styles';
+
+.select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid $super-light-gray;
+  border-radius: $border-radius;
+  color: $black;
+  transition: border-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $gray;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $super-light-gray;
+  }
+
+  &:disabled {
+    background-color: $super-light-gray;
+    cursor: not-allowed;
+  }
+
+}
+

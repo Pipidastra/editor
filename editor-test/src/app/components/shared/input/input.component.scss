@@ -1,0 +1,23 @@
+@import 'styles';
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid $super-light-gray;
+  border-radius: $border-radius;
+  transition: border-color 0.3s;
+  background-color: $white;
+  &:hover {
+    border-color: $gray;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $light-gray;
+  }
+
+  &:disabled {
+    border-color: $danger-gray;
+    cursor: not-allowed;
+  }
+}
