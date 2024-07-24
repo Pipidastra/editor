@@ -4,6 +4,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-y: hidden;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    position: sticky;
+  }
+  &__sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    &-item { }
+  }
 
   &__item {
     display: flex;
@@ -12,17 +28,9 @@
     gap: 10px;
     border: 1px solid $super-light-gray;
     border-radius: $border-radius;
-    overflow: hidden;
     background-color: $white;
 
-    &-text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
     &-title {
-      @extend .notes-list__item-text;
       font-weight: $font-weight-bold;
     }::first-letter {
        text-transform: uppercase;
@@ -30,13 +38,21 @@
 
     &-content {
       color: $dark-gray;
-      @extend .notes-list__item-text;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
     }::first-letter {
        text-transform: uppercase;
      }
+
     &:hover {
       background-color: $super-light-gray;
       cursor: pointer;
     }
+  }
+
+  &__empty {
+    font-weight: $font-weight-bold;
+    text-align: center;
   }
 }

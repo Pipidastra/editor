@@ -1,6 +1,6 @@
 <div class="note-description">
 
-  <div class="note-description__content">
+  <div class="note-description__content" *ngIf="!isNew">
     <div class="note-description__header">
       <app-button class="note-description__header-item">Редактировать</app-button>
       <app-button class="note-description__header-item">Удалить</app-button>
@@ -15,5 +15,22 @@
     </div>
 
   </div>
+  <div class="note-description__content" *ngIf="isNew">
+    <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+      <div class="note-description__header">
+        <app-button class="note-description__header-item" type="submit">Сохранить</app-button>
+        <app-button class="note-description__header-item" type="button" (click)="onCancel()">Отмена</app-button>
+      </div>
+      <div class="note-description__content">
+        <div class="note-description__title">
+          <app-input formControlName="title" type="text" placeholder="Введите заголовок"></app-input>
+        </div>
+        <div class="note-description__text-textarea">
+          <app-textarea formControlName="text" placeholder="Введите текст заметки"></app-textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+
 
 </div>

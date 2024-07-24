@@ -1,20 +1,25 @@
 import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core';
-import {NG_VALUE_ACCESSOR} from "@angular/forms";
+
+import {FormsModule, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  selector: 'app-input',
+  selector: 'app-textarea',
   standalone: true,
-  imports: [],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss',
+  imports: [
+    CommonModule,
+    FormsModule,
+  ],
+  templateUrl: './textarea.component.html',
+  styleUrl: './textarea.component.scss',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => InputComponent),
+    useExisting: forwardRef(() => TextareaComponent),
     multi: true
   }]
 })
-export class InputComponent {
-  @Input() type: string = 'text';
+
+export class TextareaComponent {
   @Input() placeholder: string = '';
   @Input() disabled: boolean = false;
   @Output() valueChange = new EventEmitter<string>();
@@ -24,9 +29,9 @@ export class InputComponent {
   private onChange: (value: string) => void = () => {};
   private onTouched: () => void = () => {};
 
-  onInputChange(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    this.value = inputElement.value;
+  onTextareaChange(event: Event) {
+    const textareaElement = event.target as HTMLTextAreaElement;
+    this.value = textareaElement.value;
     this.onChange(this.value);
     this.valueChange.emit(this.value);
   }
@@ -46,4 +51,5 @@ export class InputComponent {
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
+
 }

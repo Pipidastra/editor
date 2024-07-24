@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="530a43f8-82cb-4f10-a261-f4bac1f3400b" name="Changes" comment="add layout">
+      <change afterPath="$PROJECT_DIR$/editor-test/src/app/components/shared/textarea/textarea.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-test/src/app/components/shared/textarea/textarea.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-test/src/app/components/shared/textarea/textarea.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-test/src/app/services/note-service/note.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-test/src/app/services/note-service/note.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-header/notes-header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-header/notes-header.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-header/notes-header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/shared/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/shared/input/input.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2jgMYjLzITCeJ1FxaMNNjpdo4pv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/manke/OneDrive/Рабочий стол/editor/editor-test/src/app/components/shared/textarea",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\manke\\OneDrive\\Рабочий стол\\editor\\editor-test\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\manke\OneDrive\Рабочий стол\editor\editor-test\src\app\components\shared\textarea" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manke\OneDrive\Рабочий стол\editor\editor-test\src\app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/editor-test/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="530a43f8-82cb-4f10-a261-f4bac1f3400b" name="Changes" comment="" />
+      <created>1721804316437</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721804316437</updated>
+      <workItem from="1721804317904" duration="4254000" />
+      <workItem from="1721810064540" duration="11457000" />
+      <workItem from="1721823930223" duration="4000" />
+      <workItem from="1721824020124" duration="14318000" />
+      <workItem from="1721851418246" duration="7306000" />
+    </task>
+    <task id="LOCAL-00001" summary="add layout">
+      <created>1721840840907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721840840907</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="add layout" />
+  </component>
+</project>

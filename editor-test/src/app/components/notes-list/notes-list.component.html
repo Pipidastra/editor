@@ -1,6 +1,31 @@
-<div class="notes-list">
-  <div *ngFor="let note of notes" class="notes-list__item">
-    <div class="notes-list__item-title">{{ note.title }}</div>
-    <div class="notes-list__item-content">{{ note.content }}</div>
+<form [formGroup]="searchForm">
+  <div class="notes-list">
+    <div class="notes-list__header">
+      <app-button class="notes-list__add-button" (click)="addNote()">Добавить заметку</app-button>
+      <app-input class="notes-list__search" formControlName="search" placeholder="Поиск"></app-input>
+      <div class="notes-list__sort">
+        <div class="notes-list__sort-item">
+          <p class="notes-list__sort-label">Сортировать по:</p>
+        </div>
+        <div class="notes-list__sort-item">
+          <app-select
+            class="notes-list__select"
+            [options]="noteOptions"
+            [(selected)]="selectedNote"
+            (selectedChange)="onNoteChange()"
+          >
+          </app-select>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="filteredNotes.length; else noNotes">
+      <div *ngFor="let note of filteredNotes" class="notes-list__item">
+        <div class="notes-list__item-title">{{ note.title }}</div>
+        <p class="notes-list__item-content">{{ note.text }}</p>
+      </div>
+    </ng-container>
+    <ng-template #noNotes>
+      <div class="notes-list__empty">Заметок нет. Давай создадим одну!</div>
+    </ng-template>
   </div>
-</div>
+</form>

@@ -1,0 +1,26 @@
+@import 'styles';
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid $super-light-gray;
+  border-radius: $border-radius;
+  transition: border-color 0.3s;
+  background-color: $white;
+  resize: none;
+  height: 70vh;
+
+  &:hover {
+    border-color: $gray;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $light-gray;
+  }
+
+  &:disabled {
+    border-color: $danger-gray;
+    cursor: not-allowed;
+  }
+}
