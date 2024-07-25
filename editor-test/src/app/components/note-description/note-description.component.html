@@ -16,7 +16,7 @@
   <div class="note-description__content" *ngIf="isNew || isEditing">
     <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
       <div class="note-description__header">
-        <app-button class="note-description__header-item" type="submit">Сохранить</app-button>
+        <app-button class="note-description__header-item" type="submit" [disabled]='!noteForm.valid'>Сохранить</app-button>
         <app-button class="note-description__header-item" type="button" (click)="onCancel()">Отмена</app-button>
       </div>
       <div class="note-description__content">

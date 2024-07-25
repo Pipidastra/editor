@@ -29,21 +29,21 @@
     border: 1px solid $super-light-gray;
     border-radius: $border-radius;
     background-color: $white;
-
-    &-title {
-      font-weight: $font-weight-bold;
+    &-title,
+    &-content {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }::first-letter {
        text-transform: uppercase;
      }
+    &-title {
+      font-weight: $font-weight-bold;
+    }
 
     &-content {
       color: $dark-gray;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-
-    }::first-letter {
-       text-transform: uppercase;
-     }
+    }
 
     &:hover {
       background-color: $light-gray;

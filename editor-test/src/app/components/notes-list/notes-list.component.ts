@@ -86,5 +86,4 @@ export class NotesListComponent {
     console.log(note)
   }
 
-
 }
