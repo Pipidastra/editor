@@ -1,21 +1,19 @@
 <div class="note-description">
-
-  <div class="note-description__content" *ngIf="!isNew">
+  <div class="note-description__content" *ngIf="!isNew && selectedNote && !isEditing">
     <div class="note-description__header">
-      <app-button class="note-description__header-item">Редактировать</app-button>
-      <app-button class="note-description__header-item">Удалить</app-button>
+      <app-button class="note-description__header-item" (click)="editNote()">Редактировать</app-button>
+      <app-button class="note-description__header-item" (click)="deleteNote()">Удалить</app-button>
     </div>
-    <div class="note-description__content">
+    <div class="note-description__content" *ngIf="selectedNote">
       <div class="note-description__title">
-        adasdasdasd
+        {{ selectedNote.title }}
       </div>
       <div class="note-description__text">
-        asdfasdfasdf
+        {{ selectedNote.text }}
       </div>
     </div>
-
   </div>
-  <div class="note-description__content" *ngIf="isNew">
+  <div class="note-description__content" *ngIf="isNew || isEditing">
     <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
       <div class="note-description__header">
         <app-button class="note-description__header-item" type="submit">Сохранить</app-button>
@@ -31,6 +29,4 @@
       </div>
     </form>
   </div>
-
-
 </div>

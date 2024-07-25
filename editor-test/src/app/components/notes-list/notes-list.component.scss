@@ -46,7 +46,7 @@
      }
 
     &:hover {
-      background-color: $super-light-gray;
+      background-color: $light-gray;
       cursor: pointer;
     }
   }
@@ -54,5 +54,9 @@
   &__empty {
     font-weight: $font-weight-bold;
     text-align: center;
+  }
+
+  .selected {
+    background-color: $super-light-gray;
   }
 }

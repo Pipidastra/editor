@@ -11,7 +11,7 @@
           <app-select
             class="notes-list__select"
             [options]="noteOptions"
-            [(selected)]="selectedNote"
+            [(selected)]="selectedSort"
             (selectedChange)="onNoteChange()"
           >
           </app-select>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <ng-container *ngIf="filteredNotes.length; else noNotes">
-      <div *ngFor="let note of filteredNotes" class="notes-list__item">
+      <div *ngFor="let note of filteredNotes" class="notes-list__item" (click)="selectNote(note)" [class.selected]="note === selectedNote">
         <div class="notes-list__item-title">{{ note.title }}</div>
         <p class="notes-list__item-content">{{ note.text }}</p>
       </div>

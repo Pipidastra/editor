@@ -8,8 +8,9 @@ import { Note } from './note';
 export class NoteService {
   private notesSubject: BehaviorSubject<Note[]> = new BehaviorSubject<Note[]>([]);
   private newNoteSubject = new BehaviorSubject<boolean>(false);
+  private selectedNoteSubject = new BehaviorSubject<Note | null>(null);
   public notes$: Observable<Note[]> = this.notesSubject.asObservable();
-
+  public selectedNote$: Observable<Note | null> = this.selectedNoteSubject.asObservable();
 
   private localStorageKey: string = 'notes';
   newNote$ = this.newNoteSubject.asObservable();
@@ -61,8 +62,10 @@ export class NoteService {
         this.notesSubject.next(JSON.parse(notes));
       }
     } catch (error) {
-      console.error('Error loading notes from Local Storage', error);
       this.notesSubject.next([]);
     }
+  }
+  selectNote(note: Note | null): void {
+    this.selectedNoteSubject.next(note);
   }
 }
