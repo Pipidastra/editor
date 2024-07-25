@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="530a43f8-82cb-4f10-a261-f4bac1f3400b" name="Changes" comment="add edit, view, remove">
+    <list default="true" id="530a43f8-82cb-4f10-a261-f4bac1f3400b" name="Changes" comment="small fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/note-description/note-description.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-test/src/app/components/notes-list/notes-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,10 @@
       <workItem from="1721823930223" duration="4000" />
       <workItem from="1721824020124" duration="14318000" />
       <workItem from="1721851418246" duration="7705000" />
-      <workItem from="1721878423776" duration="5399000" />
+      <workItem from="1721878423776" duration="6649000" />
+      <workItem from="1721899484443" duration="556000" />
+      <workItem from="1721905024049" duration="753000" />
+      <workItem from="1721924401512" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="add layout">
       <created>1721840840907</created>
@@ -95,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721883333603</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="small fix">
+      <created>1721883925187</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721883925187</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +124,7 @@
     <MESSAGE value="add layout" />
     <MESSAGE value="small fixes, add sort, filter" />
     <MESSAGE value="add edit, view, remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edit, view, remove" />
+    <MESSAGE value="small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
   </component>
 </project>

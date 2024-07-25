@@ -6,6 +6,8 @@ import {InputComponent} from "../shared/input/input.component";
 import {TextareaComponent} from "../shared/textarea/textarea.component";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Note} from "../../services/note-service/note";
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-note-description',
@@ -25,6 +27,7 @@ export class NoteDescriptionComponent {
   isNew = false;
   isEditing = false;
   selectedNote: Note | null = null;
+  private destroy$ = new Subject<void>();
 
   constructor(
     private noteService: NoteService,
@@ -38,20 +41,25 @@ export class NoteDescriptionComponent {
   }
 
   ngOnInit(): void {
-    this.noteService.selectedNote$.subscribe(note => {
-      this.selectedNote = note;
-      if (note) {
-        this.noteForm.patchValue({
-          title: note.title,
-          text: note.text
-        });
-      }
-    });
-    this.noteService.newNote$.subscribe(newNote => {
-      if (newNote) {
-        this.handleNewNote();
-      }
-    });
+    this.noteService.selectedNote$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(note => {
+        this.selectedNote = note;
+        if (note) {
+          this.noteForm.patchValue({
+            title: note.title,
+            text: note.text
+          });
+        }
+      });
+
+    this.noteService.newNote$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(newNote => {
+        if (newNote) {
+          this.handleNewNote();
+        }
+      });
   }
 
   handleNewNote() {
@@ -109,5 +117,10 @@ export class NoteDescriptionComponent {
   onCancel() {
     this.isNew = false;
     this.isEditing = false;
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

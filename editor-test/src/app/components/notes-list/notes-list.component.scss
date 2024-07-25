@@ -22,6 +22,7 @@
   }
 
   &__item {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -29,6 +30,22 @@
     border: 1px solid $super-light-gray;
     border-radius: $border-radius;
     background-color: $white;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-button {
+      position: absolute;
+      display: none;
+      top: 10px;
+      right: 10px;
+    }
+    &:hover .notes-list__item-button {
+        display: flex;
+
+      }
     &-title,
     &-content {
       white-space: nowrap;

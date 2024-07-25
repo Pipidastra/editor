@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {ButtonComponent} from "../shared/button/button.component";
 import {CommonModule} from "@angular/common";
 import {NoteService} from "../../services/note-service/note.service";
@@ -6,6 +6,7 @@ import {Note} from "../../services/note-service/note";
 import {InputComponent} from "../shared/input/input.component";
 import {SelectComponent} from "../shared/select/select.component";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-notes-list',
@@ -32,7 +33,9 @@ export class NotesListComponent {
     { value: 'increaseDate', label: 'возрастанию даты' },
   ];
 
-  constructor(private noteService: NoteService, private fb: FormBuilder) {
+  private destroy$ = new Subject<void>();
+
+  constructor(private noteService: NoteService, private fb: FormBuilder, private cdr: ChangeDetectorRef) {
     this.searchForm = this.fb.group({
       search: ['']
     });
@@ -43,14 +46,16 @@ export class NotesListComponent {
   }
 
   ngOnInit(): void {
-    this.noteService.getNotes().subscribe(notes => {
-      this.filteredNotes = notes;
-      this.sortNotes();
-      if (this.filteredNotes.length > 0) {
-        this.selectNote(this.filteredNotes[0]);
-        this.selectedNote = this.filteredNotes[0];
-      }
-    });
+    this.noteService.getNotes()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(notes => {
+        this.notes = notes;
+        this.filteredNotes = [...this.notes];
+        this.sortNotes();
+        if (this.filteredNotes.length > 0) {
+          this.selectNote(this.filteredNotes[0]);
+        }
+      });
   }
 
   onNoteChange() {
@@ -75,6 +80,19 @@ export class NotesListComponent {
     });
   }
 
+  deleteNote(note: Note) {
+      this.noteService.deleteNote(note.id);
+      this.selectedNote = null;
+      this.noteService.getNotes().subscribe(notes => {
+        if (notes.length > 0) {
+          this.noteService.selectNote(notes[0]);
+        } else {
+          this.noteService.selectNote(null);
+        }
+      });
+      this.cdr.detectChanges();
+  }
+
   sortNotes() {
     const sortOrder = this.selectedSort === 'increaseDate' ? 1 : -1;
     this.filteredNotes.sort((a, b) => (new Date(a.date).getTime() - new Date(b.date).getTime()) * sortOrder);
@@ -83,7 +101,10 @@ export class NotesListComponent {
   selectNote(note: Note) {
     this.selectedNote = note;
     this.noteService.selectNote(note);
-    console.log(note)
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 }
